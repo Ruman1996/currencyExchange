@@ -32,5 +32,17 @@ pipeline {
 				
 			}
 		
+	}post{
+		always{
+			echo "hitting always"
+		}
+		success{
+			echo "success"
+	
+		}
+		failure{
+			echo "build failed"
+		}
 	}
+
 }
