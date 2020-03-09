@@ -30,19 +30,19 @@ pipeline {
 					echo "release"
 				}
 				
-			}
-		
-	}post{
-		always{
-			echo "hitting always"
-		}
-		success{
-			echo "success"
-	
-		}
-		failure{
-			echo "build failed"
-		}
+			}		
 	}
+// 	post{
+// 		always{
+// 			echo "hitting always"
+// 		}
+// 		success{
+// 			echo "success"
+	
+// 		}
+// 		failure{
+// 			echo "build failed"
+// 		}
+// 	}
 
 }
