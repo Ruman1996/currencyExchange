@@ -18,10 +18,12 @@ pipeline {
 			steps{
 				echo "build stage"
 			}
+		}
 			stage('Test'){
 				steps{
-				echo "test"
-			}
+					echo "test"
+				}
+				
 			}
 			stage('release'){
 				steps{
@@ -29,6 +31,6 @@ pipeline {
 				}
 				
 			}
-		}
+		
 	}
 }
