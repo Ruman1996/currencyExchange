@@ -31,7 +31,8 @@ pipeline {
 				}
 				
 			}		
-	} post {
+	} 
+	post {
 		always{
 			echo 'hitting always'
 		}
