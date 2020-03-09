@@ -31,18 +31,17 @@ pipeline {
 				}
 				
 			}		
-	}
-// 	post{
-// 		always{
-// 			echo "hitting always"
-// 		}
-// 		success{
-// 			echo "success"
+	} post {
+		always{
+			echo 'hitting always'
+		}
+		success{
+			echo 'success'
 	
-// 		}
-// 		failure{
-// 			echo "build failed"
-// 		}
-// 	}
+		}
+		failure{
+			echo 'build failed'
+		}
+	}
 
 }
