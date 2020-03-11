@@ -27,6 +27,7 @@ pipeline {
 				echo "build stage"
 			}
 		}
+}
 	// 		stage('Test'){
 	// 			steps{
 	// 				echo "test"
@@ -53,4 +54,4 @@ pipeline {
 	// 	}
 	// }
 
-}
+
