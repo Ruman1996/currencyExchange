@@ -12,39 +12,45 @@
 //Declarative
 
 pipeline {
-	//agent any
-	agent {docker {image 'maven:3.6.3'}}
+	agent any
+	//agent {docker {image 'maven:3.6.3'}}
+	environmet {
+		dockerHome = tool 'myDocker'
+		mavenHome = tool 'myMaven'
+		PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
+	}
 	stages{
 		stage('Build'){
 			steps{
-				sh "mvn --version"
+				sh 'mvn --version'
+				sh 'docker version'
 				echo "build stage"
 			}
 		}
-			stage('Test'){
-				steps{
-					echo "test"
-				}
+	// 		stage('Test'){
+	// 			steps{
+	// 				echo "test"
+	// 			}
 				
-			}
-			stage('release'){
-				steps{
-					echo "release"
-				}
+	// 		}
+	// 		stage('release'){
+	// 			steps{
+	// 				echo "release"
+	// 			}
 				
-			}		
-	} 
-	post {
-		always{
-			echo 'hitting always'
-		}
-		success{
-			echo 'success'
+	// 		}		
+	// } 
+	// post {
+	// 	always{
+	// 		echo 'hitting always'
+	// 	}
+	// 	success{
+	// 		echo 'success'
 	
-		}
-		failure{
-			echo 'build failed'
-		}
-	}
+	// 	}
+	// 	failure{
+	// 		echo 'build failed'
+	// 	}
+	// }
 
 }
